@@ -10,14 +10,14 @@ public class WordSearch {
     private Scanner keyboard = new Scanner(System.in);
     private char[][] gameboard;
     private String[] words;
-    //runs every method given
+    /** runs every method give n*/
     public WordSearch() {
         gameboard = new char[getColumns()][getRows()];
         getwords();
         fillBoard();
         displayWordsInGameboard();
     }
-    //input columns and validates them
+    /** input columns and validates them */
     public int getColumns() {
         do {
             System.out.printf("%nEnter a number of columns (2-15): ");
@@ -28,7 +28,7 @@ public class WordSearch {
         } while (columns < 2 || columns > 15);
         return columns;
     }
-    //input rows and validates them
+    /** input rows and validates them */
     public int getRows() {
         do {
             System.out.printf("%nEnter a number of rows (2-15): ");
@@ -39,7 +39,7 @@ public class WordSearch {
         } while (rows < 2 || rows > 15);
         return rows;
     }
-    //fill the board with random letters
+    /** fill the board with random letters */
     public char[][] fillBoard() {
         Random random = new Random();
         char letter;
@@ -52,7 +52,7 @@ public class WordSearch {
         }
         return gameboard;
     }
-    //asks the user for words to enter and validates them
+    /** asks the user for words to enter and validates them */
     public String[] getwords() {
         words = new String[rows];
         for (int i = 0; rows > i; i++) {
@@ -70,7 +70,7 @@ public class WordSearch {
         }
         return words;
     }
-    //converts the gameboard into a string
+    /** converts the gameboard into a string */
     public String boardToString() {
 
         String wordinString = "";
@@ -83,7 +83,7 @@ public class WordSearch {
         }
         return wordinString;
     }
-    //places the words into the gameboard and prints the word list
+    /** places the words into the gameboard and prints the word list */
     public String displayWordsInGameboard() {
         SecureRandom rng = new SecureRandom();
         int num;
